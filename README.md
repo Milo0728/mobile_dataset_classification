@@ -41,7 +41,7 @@ python app.py
 ## LINK COLAB
 
 ```bash
-  https://colab.research.google.com/drive/1QyOUCR5grgGWW_uyA5xtj_B0My9C-Iqj?usp=sharing
+ https://colab.research.google.com/drive/11un0pNyazH3E6kyijujQtjkvXtbSfd0E?usp=sharing
 ```
 
 
