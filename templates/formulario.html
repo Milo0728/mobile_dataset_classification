@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Predicción de Gama</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+  <h2>Predice la gama de tu celular</h2>
+
+  <p>
+    La predicción de la gama del dispositivo se basa en varias características clave:
+  </p>
+  <ul>
+    <li><strong>RAM:</strong> Una mayor cantidad de RAM suele asociarse con dispositivos de gamas superiores.</li>
+    <li><strong>Cámaras:</strong> Cámaras de mayor resolución, tanto frontal como trasera, indican un dispositivo de mayor gama.</li>
+    <li><strong>Batería:</strong> Una capacidad de batería mayor refleja componentes de mejor calidad y mayor autonomía.</li>
+    <li><strong>Pantalla:</strong> Pantallas más grandes y de alta calidad son comunes en gamas altas.</li>
+    <li><strong>Peso:</strong> Aunque no es determinante, puede influir según los materiales utilizados.</li>
+  </ul>
+  <p>
+    Completa los campos a continuación para conocer la gama estimada de tu celular:
+  </p>
+
+  <form action="/predecir" method="post">
+    <div class="form-grid">
+      <!-- Peso -->
+      <div class="form-group">
+        <label for="Mobile_Weight">Peso (g):</label>
+        <input type="number" step="0.1" name="Mobile_Weight" id="Mobile_Weight" required value="174">
+      </div>
+
+      <!-- RAM -->
+      <div class="form-group">
+        <label for="RAM">RAM (GB):</label>
+        <select name="RAM" id="RAM" required>
+          {% for ram in [2, 4, 6, 8, 12] %}
+            <option value="{{ ram }}" {% if ram == 8 %}selected{% endif %}>{{ ram }} GB</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Cámara frontal -->
+      <div class="form-group">
+        <label for="Front_Camera">Cámara frontal (MP):</label>
+        <select name="Front_Camera" id="Front_Camera" required>
+          {% for cam in [8, 12, 16, 32] %}
+            <option value="{{ cam }}" {% if cam == 16 %}selected{% endif %}>{{ cam }} MP</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Cámara trasera -->
+      <div class="form-group">
+        <label for="Back_Camera">Cámara trasera (MP):</label>
+        <select name="Back_Camera" id="Back_Camera" required>
+          {% for cam in [12, 48, 64, 108] %}
+            <option value="{{ cam }}" {% if cam == 64 %}selected{% endif %}>{{ cam }} MP</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Batería -->
+      <div class="form-group">
+        <label for="Battery_Capacity">Batería (mAh):</label>
+        <select name="Battery_Capacity" id="Battery_Capacity" required>
+          {% for bat in [3000, 4000, 4500, 5000, 6000] %}
+            <option value="{{ bat }}" {% if bat == 5000 %}selected{% endif %}>{{ bat }} mAh</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Pantalla -->
+      <div class="form-group">
+        <label for="Screen_Size">Pantalla (pulgadas):</label>
+        <select name="Screen_Size" id="Screen_Size" required>
+          {% for size in [5.5, 6.1, 6.3, 6.5, 6.7, 6.9] %}
+            <option value="{{ size }}" {% if size == 6.5 %}selected{% endif %}>{{ size }}"</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <input type="submit" value="Predecir Gama">
+  </form>
+
+  <!-- Loader -->
+  <div id="loader">Enviando datos... ⏳</div>
+
+  <script>
+    const form = document.querySelector("form");
+    const loader = document.getElementById("loader");
+
+    form.addEventListener("submit", () => {
+      loader.style.display = "block";
+    });
+  </script>
+
+  <footer>
+    <p>Juan Camilo Rodríguez y Arturo Barona</p>
+  </footer>
+
+</body>
+</html>

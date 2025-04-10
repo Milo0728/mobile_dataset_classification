@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h2>Resultado de la predicción:</h2>
+
+    <p class="resultado {{ resultado }}">
+      Este celular es de <strong>gama {{ resultado }}</strong>.
+    </p>
+    
+
+  <h3>Valores ingresados:</h3>
+  <table class="resumen">
+    <thead>
+      <tr>
+        <th>Característica</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for k, v in valores.items() %}
+        <tr>
+          <td>{{ k.replace('_', ' ') }}</td>
+          <td>{{ v }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="/">Volver al formulario</a>
+
+  <footer>
+    <p>Juan Camilo Rodríguez y Arturo Barona</p>
+  </footer>
+</body>
+</html>

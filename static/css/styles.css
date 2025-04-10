@@ -1,0 +1,151 @@
+/* Estilo general */
+body {
+    background-color: #fef9f4;
+    font-family: 'Segoe UI', sans-serif;
+    color: #5a2e0e;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2,
+h3 {
+    color: #a44a0d;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #a44a0d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Formulario */
+form {
+    margin-top: 2rem;
+}
+
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    flex: 1 1 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+input,
+select {
+    padding: 8px;
+    border: 1px solid #d7bfae;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fffdfb;
+}
+
+input[type="submit"] {
+    background-color: #a44a0d;
+    color: white;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #843b07;
+}
+
+/* Tabla resumen */
+table.resumen {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table.resumen th,
+table.resumen td {
+    padding: 10px 14px;
+    border: 1px solid #e7d5c6;
+    text-align: left;
+}
+
+table.resumen th {
+    background-color: #f8e8dd;
+    color: #7a3e0a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+/* Loader oculto por defecto */
+#loader {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: #a44a0d;
+    font-weight: bold;
+}
+
+.resultado {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.resultado.alta {
+    background-color: #e1f7e9;
+    color: #176c31;
+    border: 2px solid #2ecc71;
+}
+
+.resultado.media {
+    background-color: #fff3e0;
+    color: #a15700;
+    border: 2px solid #ffb74d;
+}
+
+.resultado.baja {
+    background-color: #fdecea;
+    color: #b03030;
+    border: 2px solid #f44336;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #8d552b;
+    padding: 1rem 0;
+    border-top: 1px solid #d7bfae;
+}
