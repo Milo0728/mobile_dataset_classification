@@ -44,6 +44,12 @@ python app.py
  https://colab.research.google.com/drive/11un0pNyazH3E6kyijujQtjkvXtbSfd0E?usp=sharing
 ```
 
+## LINK APP WEB
+
+```bash
+ https://mobile-dataset-classification.onrender.com
+```
+
 
 ## 🧑‍💻 Créditos
 
